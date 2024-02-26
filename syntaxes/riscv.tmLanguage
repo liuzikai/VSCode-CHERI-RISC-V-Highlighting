@@ -114,6 +114,36 @@
         <string>support.function.riscv.zc</string>
       </dict>
 
+      <!-- Xcheri (version 8) instructions -->
+      <dict>
+        <key>comment</key>
+        <string>Xcheri instructions</string>
+        <key>match</key>
+        <string>\b(auipcc|candperm|cbuildcap|cclear|ccleartag|ссорутуре|ccseal|cfromptr|cgetaddr|cgetbase|cgetflags|cgetlen|cgetoffset|cgetperm|cgetsealed|cgettag|cgettype|cincoffset|cincoffsetlmm|cinvoke|cjalr|c?lc|clear|cloadtags|cmove|crepresentablealignmentmask|croundrepresentablelength|c?sc|cseal|csealentry|csetaddr|csetbounds|csetboundsexact|csetboundsimm|csetequalexact|csetflags|csetoffset|cspecialrw|csub|ctestsubset|ctoptr|cunseal|fpclear|l[bhwd]u?\.cap|l[bhwd]u?\.ddc|lc\.cap|lc\.ddc|s[bhwd]\.cap|s[bhwd]\.ddc|sc\.cap|sc\.ddc)\b</string>
+        <key>name</key>
+        <string>support.function.riscv.xcheri</string>
+      </dict>
+
+      <!-- Xcheri (version 8) instructions (unspecified?) -->
+      <dict>
+        <key>comment</key>
+        <string>Xcheri instructions</string>
+        <key>match</key>
+        <string>\b(c[ls][bhwd]u?)\b</string>
+        <key>name</key>
+        <string>support.function.riscv.xcheri</string>
+      </dict>
+
+       <!-- Xcheri (version 8) pseudo instructions -->
+      <dict>
+        <key>comment</key>
+        <string>Xcheri pseudo instructions</string>
+        <key>match</key>
+        <string>\b(clgc|cllc|cjr|cret|cspecialr|cspecialw)\b</string>
+        <key>name</key>
+        <string>support.function.pseudo.riscv.xcheri</string>
+      </dict>
+
       <!-- asm type -->
       <dict>
         <key>match</key>
@@ -248,6 +278,38 @@
         <string>\b(([umsh]|vs)status|([umsh]|vs)ie|([ums]|vs)tvec|([ums]|vs)scratch|([ums]|vs)epc|([ums]|vs)cause|([umsh]|vs)tval|([umsh]|vs)ip|fflags|frm|fcsr|m?cycleh?|timeh?|m?instreth?|m?hpmcounter([3-9]|[12][0-9]|3[01])h?|[msh][ei]deleg|[msh]counteren|v?satp|hgeie|hgeip|[hm]tinst|hvip|hgatp|htimedeltah?|mvendorid|marchid|mimpid|mhartid|misa|mstatush|mtval2|pmpcfg[0-3]|pmpaddr([0-9]|1[0-5])|mcountinhibit|mhpmevent([3-9]|[12][0-9]|3[01])|tselect|tdata[1-3]|dcsr|dpc|dscratch[0-1])\b</string>
         <key>name</key>
         <string>variable.other.csr.names.riscv</string>
+      </dict>
+
+      <!-- Xcheri c register -->
+      <dict>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.variable.riscv.xcheri</string>
+          </dict>
+        </dict>
+        <key>match</key>
+        <string>\b(c([12]?[0-9]|3[01]))\b</string>
+        <key>name</key>
+        <string>variable.other.register.usable.by-number.riscv.xcheri</string>
+      </dict>
+
+      <!-- Xcheri register alias -->
+      <dict>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.variable.riscv.xcheri</string>
+          </dict>
+        </dict>
+        <key>match</key>
+        <string>\bc(null|ra|sp|gp|tp|t[0-6]|a[0-7]|s[0-9]|s1[0-1])\b</string>
+        <key>name</key>
+        <string>variable.other.register.usable.by-name.riscv.xcheri</string>
       </dict>
 
       <!-- integer -->
