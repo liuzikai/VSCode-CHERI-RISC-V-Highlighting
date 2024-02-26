@@ -52,3 +52,8 @@ This VSCode extension provides basic RISC-V colorization and snippets support. A
 ### Snippets
 
 The extension is based on Textmate's [MIPS bundle](https://github.com/textmate/mips.tmbundle).
+
+### Development
+To test the extension, open this directory in VSCode. Run using [.vscode/launch.json](.vscode/launch.json). In the pop-up window, the extension is enabled.
+
+If changes are made in the extension while running, simple save the change, and in the test window, Ctrl+P - Reload Window.
